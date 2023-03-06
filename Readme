@@ -1,0 +1,28 @@
+Task: write a code to collect data from sensors and the driver:
+
+Sensors:                            Data Flame                               Frequency
+Thermal Camera: IRCamera.py         24x32 2D matrix                             4Hz
+IMU: IMU.py                         a list of 9 elements                        >30Hz
+LiDAR: LiDAR_processor.py           300x300 2D matrix / a list of 4 elements    8Hz
+RGB Camera: RGBCamera.py            3-channel numpy array (480, 640, 3)         >30Hz
+
+Driver:
+ControlOdometryDriver.py            a list of 9 elements                    >30Hz
+
+Tips:
+Among all the sensors, the IRCamera may be the slowest. So, in our previous design, we used thread to read and update other
+sensors. And we collectd other sensors data when we update the new thermal image. Therefore, we can avoid the time differences
+between different sensors. If you have better idea, you are welcome to design the data collection in your way.
+
+Each data point in the dataset should contain one flame of each sensors data. Among them the camera images(thermal and RGB)
+and the LiDAR data will be the input of our network, the IMU and driver, will be used to label the data.
+
+The LiDAR data is the top-view of the operation area. 300x300 means a 300cm x 300cm area. This is very wide. You can make
+it smaller by extracting one small part inside it. While the 4 elements is the coordinate of user's legs.
+
+If you have any questions, feel free to ask me.
+
+We use Anydesk to connect our walker. The account is 353989124. The password will be sent to you by Wechat.
+
+BTW, remember to set the record_mode = True when using Driver in the ControlOdometryDriver.py, otherwise you will find
+it hard to push the walker.
