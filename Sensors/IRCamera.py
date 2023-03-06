@@ -36,7 +36,7 @@ class IRCamera(object):
 
         # reading threading
         self.reading_thread = threading.Thread(target=self.continuous_reading, args=(False,))
-        self.reading_thread.start()
+        # self.reading_thread.start()
         return
 
     def check_head_data(self, head_data):

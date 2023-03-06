@@ -53,7 +53,7 @@ class LiDARProcessor(object):
         self.center_point = np.array([WALKER_TOP_BOUNDARY+CENTER_TO_LIDAR,WALKER_LEFT_BOUNDARY])
         self.is_show = is_show
         # zmq part
-        self.rzo = ReceiveZMQ.get_instance()
+        # self.rzo = ReceiveZMQ.get_instance()
         self.zmq_temp_list = []
         self.zmq_scan_list = []
         self.theta_flag = 0

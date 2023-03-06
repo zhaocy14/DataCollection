@@ -284,7 +284,7 @@ class IMU(object):
 
 if __name__ == '__main__':
     """bluetooth version not recommended"""
-    IMU_instance = IMU(is_bluetooth_version=False, is_show=False)
+    IMU_instance = IMU(is_bluetooth_version=False, is_show=True)
     time.sleep(3)
     data = IMU_instance.get_imu_data()
     print(data)
