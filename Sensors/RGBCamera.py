@@ -38,7 +38,8 @@ class RGBCamera(object):
             # Press any key to quit
             success, self.image = self.cam.read()
             if self.demo_mode:
-                cv2.imshow("RGB", self.image)
+                if self.image is not None:
+                    cv2.imshow("RGB", self.image)
         self.cam.release()
         cv2.destroyAllWindows()
 
